@@ -1,0 +1,127 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    О нас
+{% endblock %}
+
+{% block content %}
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Университеты</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Курсы</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-pane" aria-selected="false">Статьи</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="test-tab" data-bs-toggle="tab" data-bs-target="#test-tab-pane" type="button" role="tab" aria-controls="test-pane" aria-selected="false">Тесты</button>
+    </li>
+  </ul>
+
+
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <br>
+    <div class="card mb-3" data-width="100%">
+        <div class="row g-2">
+          <div class="col-md-4">
+            <img src="{% static 'main/img/logo.jpg' %}" class="img-fluid rounded-start" height="100%" width="100%" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+            <button type="button" class="btn btn-light">Войти</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <br>
+    <table>
+      <tr>
+        <td>
+            <a href="#" style="text-decoration: none;">
+              <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </a>
+
+        </td>
+
+         <td>
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+    {% for el in news %}
+      <br>
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ el.title }}</h5>
+          <p class="card-text">{{ el.anons }}</p>
+          <a href="{% url 'news-detail' el.id %}" class="btn btn-primary">Перейти</a>
+        </div>
+      </div>
+    {% endfor %}
+    <br>
+  </div>
+
+  <div class="tab-pane fade" id="test-tab-pane" role="tabpanel" aria-labelledby="test-tab" tabindex="0">
+    Hello
+    <div class="test">
+      <div class="card">
+      <img src="{% static 'main/img/logo.jpg' %}" />
+      <div>
+        <h2>Test Test</h2>
+        <h3>Test Test</h3>
+        <p>
+          Hello my name is Igor
+        </p>
+        <a>Follow me</a>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/layout.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'main/img/logo.ico' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <header role="header" style="background-color:#FFFFFF;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#98999B;">
+            <div class="container">
+                <a class="navbar-brand" href="/about">
+                    <p style="color:white">
+                        <img src="{% static 'main/img/logo.jpg' %}" height="50px" width="50px" class="rounded" alt="...">
+                        Student's Life
+                    </p>
+                </a>
+                <a class="navbar-brand" href="/about">
+                    <p style="color:white">
+                        <img src="{% static 'main/img/logo.jpg' %}" height="50px" width="50px" class="rounded" alt="...">
+                        Student's Life
+                    </p>
+                </a>
+            </div>
+        </nav>
+        <div style="float: right;">
+            <button type="button" class="btn btn-light">Войти</button>
+            <button type="button" class="btn btn-light">Зарегистрироваться</button>
+        </div>
+
+    </header>
+
+    <main role="main">
+        <br>
+        <div class="container">
+            <div id="mySidenav" class="sidenav">
+              <a href="#" id="about">Цитаты</a>
+              <a href="#" id="blog">Университеты</a>
+              <a href="#" id="projects">Курсы</a>
+              <a href="#" id="contact">Направления</a>
+            </div>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+    </main>
+
+
+<footer class="text-light pt-5" role="footer" style="background-color:#98999B;">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-6 col-lg-4">
+                <h3 class="fw-bold"><img src="{% static 'main/img/logo.jpg' %}" height="50px" width="50px" class="rounded" alt="..."> Student's Life</h3>
+
+                <p class="pt-2">Мы рассказываем обо всех студенческих плюшках и студенческой жизни.</p>
+                <p class="mb-2"></p>
+            </div>
+            <div class="col">
+                <h4>Информация</h4>
+                <ul class="list-unstyled pt-2">
+                    <a href="/university" class="text-light" style="text-decoration: none;"><li class="py-1">Университеты</li></a>
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">Курсы</li></a>
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">Направления</li></a>
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">Тесты</li></a>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>О нас</h4>
+                <ul class="list-unstyled pt-2">
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">История</li></a>
+                    <a href="/news" class="text-light" style="text-decoration: none;"><li class="py-1">Статьи</li></a>
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">Видео</li></a>
+                    <a href="#" class="text-light" style="text-decoration: none;"><li class="py-1">Вопросы</li></a>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3 text-lg-end">
+                <h4>Социальные сети</h4>
+                <div class="social-media pt-2">
+                    <a href="https://www.youtube.com/@Student.s_Lifee" class="text-light">YouTube</a>
+                    <a href="https://www.instagram.com/student.s_life/" class="text-light">INSTAGRAM</a>
+                    <a href="https://t.me/SL_StudentsLife" class="text-light">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="d-sm-flex justify-content-between py-1">
+            <p>2024 ©Student's Life. All Rights Reserved. </p>
+            <p>
+                <a href="#" class="text-light text-decoration-none pe-4">Terms of use</a>
+                <a href="#" class="text-light text-decoration-none"> Privacy policy</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
